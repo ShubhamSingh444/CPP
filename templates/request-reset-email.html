@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+{% block title %} reset password {% endblock title%}
+{% block head %}
+
+<br>
+<br>
+    
+
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">
+      {% for message in messages %}
+      <div
+        class="alert alert-{{message.tags}} alert-dismissible fade show"
+        role="alert"
+      >
+        <strong></strong> {{message}}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %} {% comment %} Contact Us COde {% endcomment %}
+      <h3 class="text-light">Request a reset Link</h3>
+
+      <form action="/request-reset-email/" method="post">
+        {% csrf_token %}
+        <br />
+    
+        <label for="email" class="text-white">Email</label>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control p-2"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+       <br>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    
+        <br />
+       <a href="/">Go Back</a>
+        <br />
+      </form>
+    </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+{% endblock head %}
