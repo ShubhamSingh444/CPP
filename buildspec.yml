@@ -31,6 +31,7 @@ phases:
       - pip install -r requirements.txt
       - pip install pylint
       - pip install pipenv
+      - pip install six
       # - pip install bandit
       # - pylint --ignore=migrations,.ebextensions,__pycache__,static,staticfiles,templates,.gitignore,buidspec.yml,env,Pipfile,views.py,db.sqlite3,1,requirements.txt --generate-rcfile > .pylintrc
       # - sed -i 's/fail-under=10/fail-under=0/g'  .pylintrc
