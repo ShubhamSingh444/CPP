@@ -1,100 +1,15 @@
 version: 0.2
-
-#env:
-#variables:
-# key: "value"
-# key: "value"
-#parameter-store:
-# key: "value"
-# key: "value"
-#secrets-manager:
-# key: secret-id:json-key:version-stage:version-id
-# key: secret-id:json-key:version-stage:version-id
-#exported-variables:
-# - variable
-# - variable
-#git-credential-helper: yes
-
-#batch:
-#fast-fail: true
-#build-list:
-#build-matrix:
-#build-graph:
-
 phases:
-  install:
-    runtime-versions:
-      python: 3.9
-    commands:
-      - ls -lrt
-      - pip install --upgrade pip
-      - pip install -r requirements.txt
-      - pip install pylint
-      - pip install pipenv
-      - pip install six
-      # - pip install bandit
-      # - pylint --ignore=migrations,.ebextensions,__pycache__,static,staticfiles,templates,.gitignore,buidspec.yml,env,Pipfile,views.py,db.sqlite3,1,requirements.txt --generate-rcfile > .pylintrc
-      # - sed -i 's/fail-under=10/fail-under=0/g'  .pylintrc
-      # - sed -i 's/snake_case/any/g'  .pylintrc
-
-
-  pre_build:
-    commands:
-      - python --version
-
-  build:
-    commands:
-      # - pylint -rn --rcfile=.pylintrc *
-      # - bandit -iii -r . --exclude=buildspec.yml,db.sqlite3,./env,requirements.txt
-      # - bandit -iii -r . --exclude=buildspec.yml,db.sqlite3,./env,requirements.txt > bandit-output.txt
-      - pipenv lock || true
-      - pipenv requirements
-      # - pipenv check
-      # - pipenv check > pipenv-output.txt
-
+ install:
+  runtime-versions:
+   python: 3.7
+  commands:
+   - pip install --upgrade pip
+   # Install dependencies needed for running the static analysis
+   - pip install -r requirements.txt
+ pre_build:
+  commands:
+   - python --version
 artifacts:
-  files:
-    - '**/*'
-ignore_exit_codes:
-    - 1
-    #If you use the Ubuntu standard image 2.0 or later, you must specify runtime-versions.
-    #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
-    #runtime-versions:
-    # name: version
-    # name: version
-    #commands:
-    # - command
-    # - command
-  #pre_build:
-    #commands:
-    # - command
-    # - command
-  # build:
-  #   commands:
-    # - command
-    # - command
-  #post_build:
-    #commands:
-    # - command
-    # - command
-
-#reports:
-#report-name-or-arn:
-#files:
-# - location
-# - location
-#base-directory: location
-#discard-paths: yes
-#file-format: JunitXml | CucumberJson
-
-#artifacts:
-#files:
-# - location
-# - location
-#name: $(date +%Y-%m-%d)
-#discard-paths: yes
-#base-directory: location
-
-#cache:
-#paths:
-# - paths
+ files:
+  - '**/*'
