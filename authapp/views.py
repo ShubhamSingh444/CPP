@@ -6,7 +6,7 @@ from authapp.models import Contact,MembershipPlan, User,Trainer,Enrollment, Appo
 # Create your views here.
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode,urlsafe_base64_encode
-from .utils import TokenGenerator,generate_token
+from .utils import TokenGenerator, calculate_bmi,generate_token
 from django.utils.encoding import force_bytes,force_text,DjangoUnicodeDecodeError
 from django.core.mail import EmailMessage
 from django.conf import settings
@@ -253,9 +253,6 @@ class RequestResetEmailView(View):
         return render(request,'request-reset-email.html')
     
     def post(self,request):
-        """
-        Handle POST request to reset user password
-        """
         email=request.POST['email']
         user=User.objects.filter(email=email)
 
@@ -324,3 +321,14 @@ class SetNewPasswordView(View):
             return render(request,'set-new-password.html',context)
 
         return render(request,'set-new-password.html',context)
+    
+def bmi(request):
+    if request.method == 'POST':
+        height_cm = float(request.POST['height'])
+        weight_kg = float(request.POST['weight'])
+        bmi = calculate_bmi(height_cm, weight_kg)
+        context = {'bmi': bmi}
+        return render(request, 'bmi.html', context)
+    else:
+        return render(request, 'bmi.html')
+    

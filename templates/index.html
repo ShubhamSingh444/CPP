@@ -44,6 +44,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="/">Home</a></li>
           <li><a class="nav-link scrollto active" href="/join">Join</a></li>
+          <li><a class="nav-link scrollto active" href="/bmi">BMI</a></li>
 
           <li><a class="nav-link scrollto " href="/appointment">Appointment Details</Details></a></li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
@@ -62,6 +63,7 @@
           {% if not request.user.is_authenticated %}
 
           <li><a class="nav-link scrollto" href="/signup">Signup</a></li>
+          <li><a class="nav-link scrollto" href="/login">Login</a></li>
          {% else %}
          <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
 
@@ -144,7 +146,7 @@
         </div>
 
         <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.955282232947!2d-6.237865184144008!3d53.34861677997721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e22d4cfa4a9%3A0x7a04e51a23bbda0f!2sMayor+Street+Lower%2C+International+Financial+Services+Centre%2C+Dublin+1%2C+D01+K7N3%2C+Ireland!5e0!3m2!1sen!2sus!4v1690404216998!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2389.518002189594!2d-6.242388384214392!3d53.34660597997902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e4c8b4a4f23%3A0x26e981eb76b0e1b2!2s48%20Mayor%20St%20Lower%2C%20North%20Dock%2C%20Dublin%2C%20D01%20R7W7%2C%20Ireland!5e0!3m2!1sen!2sus!4v1650991230575" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="row mt-5">
@@ -245,6 +247,15 @@
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <p>OPENING HOURS</p>
+            <p>Mon-Thurs: 06:00-23:00</p>
+            <p>Friday: 06:00-22:00</p>
+            <p>Saturday: 07:00-20:00</p>
+            <p>Sunday: 08:00-20:00</p>
+            <p>Bank Holidays: 09:00-18:00</p>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">

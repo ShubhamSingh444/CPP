@@ -77,5 +77,14 @@ class User(models.Model):
     def __str__(self) :
         return self.name
 
+class BMI(models.Model):
+    height = models.DecimalField(max_digits=5, decimal_places=2)
+    weight = models.DecimalField(max_digits=5, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def bmi(self):
+        return round(self.weight / ((self.height / 100) ** 2), 2)
+
 
 
