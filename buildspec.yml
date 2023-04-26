@@ -7,6 +7,7 @@ phases:
    - pip install --upgrade pip
    # Install dependencies needed for running the static analysis
    - pip install -r requirements.txt
+   - pip install six
  pre_build:
   commands:
    - python --version
