@@ -102,16 +102,16 @@
 	<title>BMI Calculator</title>
 	<style>
 		body {
-			background-image: url("https://nowthendigital.com/wp-content/uploads/2022/03/nowthendigital.com__BMI-Calculator-for-Men-and-Women-1.webp");
+			background-image: url("/media/gallery/gym1.jpg");
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
 			font-family: Arial, sans-serif;
 		}
 		.container {
-			max-width: 500px;
+			max-width: 100px;
 			margin: 0 auto;
-			padding: 150px;
+			padding: 120px;
 			background-color: rgba(255, 255, 255, 0.8);
 			border-radius: 10px;
 			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
@@ -155,6 +155,17 @@
 		<h1>BMI Calculator</h1>
 		{% if bmi %}
 			<p>Your BMI is {{ bmi }}</p>
+			<p>Your BMI category is 
+			    {% if bmi < 18.5 %}
+			      underweight
+			    {% elif bmi >= 18.5 and bmi <= 24.9 %}
+			      normal
+			    {% elif bmi >= 25 and bmi <= 29.9 %}
+			      overweight
+			    {% else %}
+			      obese
+			    {% endif %}
+		  	</p>
 		{% endif %}
 		<form method="post">
 			{% csrf_token %}
@@ -167,4 +178,3 @@
 	</div>
 </body>
 </html>
-
