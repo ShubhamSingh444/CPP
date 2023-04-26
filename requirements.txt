@@ -7,3 +7,4 @@ typed-ast==1.5.3
 typing-extensions==4.5.0
 wrapt==1.14.0
 pillow==9.5.0
+six==1.16.0
