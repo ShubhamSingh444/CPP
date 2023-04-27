@@ -3,7 +3,6 @@ Gym
 This is a website for enrolling in a gym, powered by Django
 
 Running the project
-All the files of the project is combined and all the modules are set to one file, so to run the
 
 First of all you need to install pip3
 
@@ -21,7 +20,11 @@ Also the requirements are listed as
 Django==3.2
 After installing you can run the project by using the following command
 
-python3 manage.py runserver
+Open your command prompt or terminal.
+Navigate to the directory where your Django project is located using the "cd" command.
+Activate your virtual environment.
+Run the command "python manage.py runserver" to start the development server.
+Once the server is running, you can access your Django project by opening a web browser and entering the URL "http://localhost:8000/" (or a different port number if you specified one).
 
 Built With
 Python - Programming language

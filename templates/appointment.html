@@ -13,13 +13,17 @@ Gallery
 <div class="col-md-4">
 
 
-  <div class="card">
-    <img src="https://thumbs.dreamstime.com/b/table-top-blur-fitness-gym-background-88042424.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{post.title}}</h5>
-      <p class="card-text">Uploaded On : {{post.timeStamp}} </p>
-    </div>
-  </div>
+	<style>
+		body {
+			background-image: url('/media/gallery/gym1.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		h1 {
+			color: white;
+			text-align: center;
+		}
+	</style>
   
 
 
@@ -31,9 +35,6 @@ Gallery
 
 </div>
 </div>
-
-
-
 
 
 {% endblock body %} {% endcomment %}
@@ -63,7 +64,7 @@ Gallery
     </nav>
     <style>
       body {
-        background-image: url('https://t3.ftcdn.net/jpg/01/14/40/14/360_F_114401420_yN5sJ20f0wk8xuCLn6qBGS9gjEwvSZNG.jpg');
+        background-image: url('https://assets.entrepreneur.com/content/3x2/2000/20190620131326-Example-of-Personal-Trainer-Business-Ideas-Bigstock-4000pxW-X-2670pxH-copy.jpeg');
         background-size: cover;
         background-position: center;
       }
@@ -158,13 +159,13 @@ Gallery
         <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Workout</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Appoinment Date</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
+      <th class="text-white"scope="col">Name</th>
+      <th class="text-white"scope="col">Email</th>
+      <th class="text-white"scope="col">Workout</th>
+      <th class="text-white"scope="col">Gender</th>
+      <th class="text-white"scope="col">Appoinment Date</th>
+      <th class="text-white"scope="col">Edit</th>
+      <th class="text-white"scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -176,8 +177,8 @@ Gallery
       <td>{{d.workout}}</td>
       <td>{{d.gender}}</td>
       <td>{{d.Date}}</td>
-      <td><a type="button" href="/update/{{d.id}}" class="btn btn-outline-primary">Edit</a></td>
-      <td><a type="button" href="/delete/{{d.id}}" class="btn btn-outline-danger">Delete</a></td>
+      <td><a type="button" href="/update/{{d.id}}" class="btn btn-outline-primary text-white">Edit</a></td>
+      <td><a type="button" href="/delete/{{d.id}}" class="btn btn-outline-danger text-white">Delete</a></td>
       
     </tr>
 {% endfor %}

@@ -86,6 +86,3 @@ class BMI(models.Model):
     @property
     def bmi(self):
         return round(self.weight / ((self.height / 100) ** 2), 2)
-
-
-
